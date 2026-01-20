@@ -4,21 +4,37 @@
 
 ![Screenshot](data/screenshot.png?raw=true)
 
-A fast, lightweight code editor designed for Elementary OS, now easily installable on **Linux Mint** and other Linux distributions.
+A fast, lightweight code editor designed for Elementary OS, now easily installable on **Linux Mint**, **LMDE 7**, and other Linux distributions.
 
-## Quick Installation (Linux Mint)
+## Quick Installation
 
-For Linux Mint users, installation is simple:
+### Linux Mint (Ubuntu-based 21.x/22.x)
 
 ```bash
-./scripts/quick-install-mint.sh
+./distros/linux-mint/quick-install.sh
 ```
 
-This will automatically install dependencies, build, and install Elementary Code on your system.
+### LMDE 7 (Debian Edition)
+
+**Option 1: Install from DEB package** (easiest):
+```bash
+# Download the .deb file from releases, then:
+sudo dpkg -i io.elementary.code_8.1.2-lmde7_amd64.deb
+sudo apt-get install -f
+```
+
+**Option 2: Build from source**:
+```bash
+./distros/lmde7/build-english-only.sh
+sudo ninja -C build install
+```
+
+These scripts will automatically install dependencies, build, and install Elementary Code on your system.
 
 ## Installation Guides
 
-- **[Linux Mint Installation Guide](INSTALL_LINUX_MINT.md)** - Detailed guide for Linux Mint 21.x and 22.x
+- **[Linux Mint Installation Guide](distros/linux-mint/INSTALL.md)** - For Linux Mint 21.x and 22.x (Ubuntu-based)
+- **[LMDE 7 Installation Guide](distros/lmde7/INSTALL.md)** - For Linux Mint Debian Edition 7
 - **[General Linux Installation Guide](INSTALL_LINUX.md)** - For Ubuntu, Debian, Fedora, Arch, and other distributions
 - **[Dependencies Reference](DEPENDENCIES.md)** - Complete dependency list and cross-distribution package names
 
@@ -26,9 +42,14 @@ This will automatically install dependencies, build, and install Elementary Code
 
 ### Install Dependencies
 
-**Linux Mint / Ubuntu / Debian:**
+**Linux Mint (Ubuntu-based):**
 ```bash
-./scripts/install-dependencies-mint.sh
+./distros/linux-mint/install-dependencies.sh
+```
+
+**LMDE 7 (Debian-based):**
+```bash
+./distros/lmde7/install-dependencies.sh
 ```
 
 Or install manually (see [DEPENDENCIES.md](DEPENDENCIES.md) for your distribution).
@@ -36,7 +57,7 @@ Or install manually (see [DEPENDENCIES.md](DEPENDENCIES.md) for your distributio
 ### Build
 
 ```bash
-./scripts/build.sh
+./scripts/common/build.sh
 ```
 
 Or manually:
@@ -49,7 +70,7 @@ ninja
 ### Install
 
 ```bash
-./scripts/install.sh
+./scripts/common/install.sh
 ```
 
 Or manually:
@@ -85,7 +106,7 @@ Or find "Code" in your application menu.
 
 ## System Requirements
 
-- Linux Mint 21.x or 22.x (or equivalent Ubuntu/Debian)
+- Linux Mint 21.x, 22.x (Ubuntu-based) or LMDE 7 (Debian-based)
 - 2GB free disk space for building
 - GTK 3.6+
 - See [DEPENDENCIES.md](DEPENDENCIES.md) for complete requirements
@@ -93,7 +114,7 @@ Or find "Code" in your application menu.
 ## Uninstalling
 
 ```bash
-./scripts/uninstall.sh
+./scripts/common/uninstall.sh
 ```
 
 ## Getting Help

@@ -4,7 +4,8 @@ This guide covers installation of Elementary Code (io.elementary.code) on variou
 
 ## Distribution-Specific Quick Guides
 
-- **[Linux Mint](INSTALL_LINUX_MINT.md)** - Detailed guide for Linux Mint users
+- **[Linux Mint (Ubuntu-based)](distros/linux-mint/INSTALL.md)** - For Linux Mint 21.x and 22.x
+- **[LMDE 7 (Debian-based)](distros/lmde7/INSTALL.md)** - For Linux Mint Debian Edition 7
 - **Ubuntu/Debian** - See below
 - **Fedora/RHEL** - See below
 - **Arch Linux** - See below
