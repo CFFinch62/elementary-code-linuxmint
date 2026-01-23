@@ -24,6 +24,58 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
 cd "$PROJECT_ROOT"
 
+# Check for required dependencies
+echo -e "${BLUE}Checking dependencies...${NC}"
+MISSING_DEPS=()
+
+# Check for key build tools and libraries
+for cmd in meson valac ninja pkg-config; do
+    if ! command -v $cmd &> /dev/null; then
+        MISSING_DEPS+=("$cmd")
+    fi
+done
+
+# Check for key libraries using pkg-config
+for lib in libhandy-1 gtksourceview-4 libgee-0.8; do
+    if ! pkg-config --exists $lib 2>/dev/null; then
+        MISSING_DEPS+=("$lib")
+    fi
+done
+
+if [ ${#MISSING_DEPS[@]} -gt 0 ]; then
+    echo ""
+    echo -e "${YELLOW}Warning: Missing dependencies detected:${NC}"
+    for dep in "${MISSING_DEPS[@]}"; do
+        echo "  - $dep"
+    done
+    echo ""
+    echo "Dependencies must be installed before building."
+    echo ""
+    read -p "Would you like to run the dependency installer now? (Y/n) " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+        if [ -f "$SCRIPT_DIR/install-dependencies.sh" ]; then
+            echo ""
+            bash "$SCRIPT_DIR/install-dependencies.sh"
+            echo ""
+            echo -e "${GREEN}Dependencies installed. Continuing with build...${NC}"
+            echo ""
+        else
+            echo -e "${RED}Error: install-dependencies.sh not found${NC}"
+            exit 1
+        fi
+    else
+        echo ""
+        echo -e "${RED}Cannot build without dependencies. Exiting.${NC}"
+        echo "Please run: $SCRIPT_DIR/install-dependencies.sh"
+        exit 1
+    fi
+else
+    echo -e "${GREEN}✓ All required dependencies found${NC}"
+fi
+
+echo ""
+
 # Backup and patch data/meson.build
 echo -e "${BLUE}Patching build files...${NC}"
 if [ ! -f "data/meson.build.bak" ]; then

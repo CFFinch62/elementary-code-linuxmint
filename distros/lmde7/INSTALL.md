@@ -31,10 +31,13 @@ sudo ninja -C build install
 ```
 
 This script will automatically:
-1. Install all required dependencies (using Debian package names)
+1. **Check for dependencies** and offer to install them if missing
 2. Build the application (English-only, bypassing translation issues)
 3. Install it to your system
-4. Set up desktop integration
+
+> [!NOTE]
+> The build script now automatically detects missing dependencies and will prompt you to install them. You can also manually install dependencies first using `./distros/lmde7/install-dependencies.sh` if preferred.
+
 
 ## System Requirements
 
@@ -244,12 +247,12 @@ To update to a newer version:
 
 ## Differences from Ubuntu-based Linux Mint
 
-| Aspect | Linux Mint (Ubuntu) | LMDE 7 (Debian) |
-|--------|---------------------|-----------------|
-| Base | Ubuntu 22.04/24.04 | Debian 12/13 |
-| PPAs | ✓ Supported | ✗ Not supported |
-| libpeas | `libpeas-2-dev` | `libpeas-dev` |
-| libvala | `libvala-0.56-dev` | `libvala-dev` |
+| Aspect  | Linux Mint (Ubuntu) | LMDE 7 (Debian)   |
+| ------- | ------------------- | ----------------- |
+| Base    | Ubuntu 22.04/24.04  | Debian 12/13      |
+| PPAs    | ✓ Supported         | ✗ Not supported   |
+| libpeas | `libpeas-2-dev`     | `libpeas-dev`     |
+| libvala | `libvala-0.56-dev`  | `libvala-dev`     |
 | Granite | From Elementary PPA | Build from source |
 
 ## Getting Help

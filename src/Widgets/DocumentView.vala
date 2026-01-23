@@ -438,7 +438,6 @@ public class Scratch.Widgets.DocumentView : Gtk.Box {
     private void insert_document (Scratch.Services.Document doc, int pos) {
         tab_view.insert (doc, pos);
         if (Scratch.saved_state.get_boolean ("outline-visible")) {
-            debug ("setting outline visible");
             doc.show_outline (true);
         }
     }

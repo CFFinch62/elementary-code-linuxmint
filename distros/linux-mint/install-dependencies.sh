@@ -106,6 +106,7 @@ PACKAGES=(
     "libsoup-3.0-dev"
     "$VALA_PKG"
     "libvte-2.91-dev"
+    "universal-ctags"
     "itstool"
     "git"
 )

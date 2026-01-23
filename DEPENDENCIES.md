@@ -6,11 +6,11 @@ This document provides detailed information about all dependencies required to b
 
 These are required to compile the application:
 
-| Dependency | Minimum Version | Purpose | Debian/Ubuntu Package | Fedora Package | Arch Package |
-|------------|----------------|---------|----------------------|----------------|--------------|
-| **meson** | 0.58.0 | Build system | `meson` | `meson` | `meson` |
-| **valac** | 0.48 | Vala compiler | `valac` | `vala` | `vala` |
-| **git** | - | Version control | `git` | `git` | `git` |
+| Dependency | Minimum Version | Purpose         | Debian/Ubuntu Package | Fedora Package | Arch Package |
+| ---------- | --------------- | --------------- | --------------------- | -------------- | ------------ |
+| **meson**  | 0.58.0          | Build system    | `meson`               | `meson`        | `meson`      |
+| **valac**  | 0.48            | Vala compiler   | `valac`               | `vala`         | `vala`       |
+| **git**    | -               | Version control | `git`                 | `git`          | `git`        |
 
 ## Runtime Dependencies
 
@@ -18,44 +18,45 @@ These libraries are required for the application to function:
 
 ### Core Libraries
 
-| Dependency | Minimum Version | Purpose | Debian/Ubuntu Package | Fedora Package | Arch Package |
-|------------|----------------|---------|----------------------|----------------|--------------|
-| **glib** | 2.74.0 | Core library | `libglib2.0-dev` | `glib2-devel` | `glib2` |
-| **gio-unix** | 2.20 | I/O library | (included in glib) | (included in glib) | (included in glib) |
-| **gtk+3** | 3.6.0 | GUI toolkit | `libgtk-3-dev` | `gtk3-devel` | `gtk3` |
-| **gee** | 0.8.5 | Collection library | `libgee-0.8-dev` | `libgee-devel` | `libgee` |
+| Dependency   | Minimum Version | Purpose            | Debian/Ubuntu Package | Fedora Package     | Arch Package       |
+| ------------ | --------------- | ------------------ | --------------------- | ------------------ | ------------------ |
+| **glib**     | 2.74.0          | Core library       | `libglib2.0-dev`      | `glib2-devel`      | `glib2`            |
+| **gio-unix** | 2.20            | I/O library        | (included in glib)    | (included in glib) | (included in glib) |
+| **gtk+3**    | 3.6.0           | GUI toolkit        | `libgtk-3-dev`        | `gtk3-devel`       | `gtk3`             |
+| **gee**      | 0.8.5           | Collection library | `libgee-0.8-dev`      | `libgee-devel`     | `libgee`           |
 
 ### Elementary/GNOME Libraries
 
-| Dependency | Minimum Version | Purpose | Debian/Ubuntu Package | Fedora Package | Arch Package |
-|------------|----------------|---------|----------------------|----------------|--------------|
-| **granite** | 6.0.0 | Elementary widgets | `libgranite-dev` | `granite-devel`* | `granite` |
-| **libhandy** | 0.90.0 | Adaptive widgets | `libhandy-1-dev` | `libhandy-devel` | `libhandy` |
-| **gtksourceview** | 4.x | Source code editing | `libgtksourceview-4-dev` | `gtksourceview4-devel` | `gtksourceview4` |
-| **libpeas** | 2.x | Plugin system | `libpeas-2-dev`** | `libpeas-devel` | `libpeas` |
+| Dependency        | Minimum Version | Purpose             | Debian/Ubuntu Package    | Fedora Package         | Arch Package     |
+| ----------------- | --------------- | ------------------- | ------------------------ | ---------------------- | ---------------- |
+| **granite**       | 6.0.0           | Elementary widgets  | `libgranite-dev`         | `granite-devel`*       | `granite`        |
+| **libhandy**      | 0.90.0          | Adaptive widgets    | `libhandy-1-dev`         | `libhandy-devel`       | `libhandy`       |
+| **gtksourceview** | 4.x             | Source code editing | `libgtksourceview-4-dev` | `gtksourceview4-devel` | `gtksourceview4` |
+| **libpeas**       | 2.x             | Plugin system       | `libpeas-2-dev`**        | `libpeas-devel`        | `libpeas`        |
 
 \* May require additional repositories on Fedora  
 \*\* Use `libpeas-dev` on older Ubuntu/Debian versions
 
 ### Additional Features
 
-| Dependency | Minimum Version | Purpose | Debian/Ubuntu Package | Fedora Package | Arch Package |
-|------------|----------------|---------|----------------------|----------------|--------------|
-| **libgit2-glib** | 1.2.0 | Git integration | `libgit2-glib-1.0-dev` | `libgit2-glib-devel` | `libgit2-glib` |
-| **editorconfig** | - | EditorConfig support | `libeditorconfig-dev` | `editorconfig-devel` | `editorconfig-core-c` |
-| **gtkspell3** | - | Spell checking | `libgtkspell3-3-dev` | `gtkspell3-devel` | `gtkspell3` |
-| **vte** | 2.91 | Terminal emulation | `libvte-2.91-dev` | `vte291-devel` | `vte3` |
-| **libsoup** | 3.0 | HTTP library | `libsoup-3.0-dev` | `libsoup3-devel` | `libsoup3` |
-| **webkit2gtk** | 4.1 | Markdown preview | `libwebkit2gtk-4.1-dev` | `webkit2gtk4.1-devel` | `webkit2gtk-4.1` |
-| **fontconfig** | - | Font configuration | `libfontconfig-dev` | `fontconfig-devel` | `fontconfig` |
-| **pangoft2** | - | Font rendering | `libpango1.0-dev` | `pango-devel` | `pango` |
+| Dependency          | Minimum Version | Purpose                          | Debian/Ubuntu Package   | Fedora Package        | Arch Package          |
+| ------------------- | --------------- | -------------------------------- | ----------------------- | --------------------- | --------------------- |
+| **libgit2-glib**    | 1.2.0           | Git integration                  | `libgit2-glib-1.0-dev`  | `libgit2-glib-devel`  | `libgit2-glib`        |
+| **editorconfig**    | -               | EditorConfig support             | `libeditorconfig-dev`   | `editorconfig-devel`  | `editorconfig-core-c` |
+| **gtkspell3**       | -               | Spell checking                   | `libgtkspell3-3-dev`    | `gtkspell3-devel`     | `gtkspell3`           |
+| **vte**             | 2.91            | Terminal emulation               | `libvte-2.91-dev`       | `vte291-devel`        | `vte3`                |
+| **libsoup**         | 3.0             | HTTP library                     | `libsoup-3.0-dev`       | `libsoup3-devel`      | `libsoup3`            |
+| **webkit2gtk**      | 4.1             | Markdown preview                 | `libwebkit2gtk-4.1-dev` | `webkit2gtk4.1-devel` | `webkit2gtk-4.1`      |
+| **fontconfig**      | -               | Font configuration               | `libfontconfig-dev`     | `fontconfig-devel`    | `fontconfig`          |
+| **pangoft2**        | -               | Font rendering                   | `libpango1.0-dev`       | `pango-devel`         | `pango`               |
+| **universal-ctags** | -               | Symbol outline for all languages | `universal-ctags`       | `ctags`               | `ctags`               |
 
 ### Development Libraries
 
-| Dependency | Purpose | Debian/Ubuntu Package | Fedora Package | Arch Package |
-|------------|---------|----------------------|----------------|--------------|
-| **libvala** | Vala runtime | `libvala-0.56-dev`* | `vala-devel` | (included in vala) |
-| **libgail** | Accessibility | `libgail-3-dev` | (included in gtk3) | (included in gtk3) |
+| Dependency  | Purpose       | Debian/Ubuntu Package | Fedora Package     | Arch Package       |
+| ----------- | ------------- | --------------------- | ------------------ | ------------------ |
+| **libvala** | Vala runtime  | `libvala-0.56-dev`*   | `vala-devel`       | (included in vala) |
+| **libgail** | Accessibility | `libgail-3-dev`       | (included in gtk3) | (included in gtk3) |
 
 \* Version number matches your Vala version (e.g., 0.48, 0.52, 0.56)
 
@@ -63,9 +64,8 @@ These libraries are required for the application to function:
 
 These are not strictly required but enable additional features:
 
-| Dependency | Purpose | Package Name |
-|------------|---------|--------------|
-| **ctags** | Code navigation | `universal-ctags` or `exuberant-ctags` |
+| Dependency | Purpose             | Package Name                                            |
+| ---------- | ------------------- | ------------------------------------------------------- |
 | **pkexec** | Elevated privileges | `policykit-1` (Debian/Ubuntu) or `polkit` (Fedora/Arch) |
 
 ## Installation by Distribution
@@ -90,6 +90,7 @@ sudo apt install -y \
     libvala-0.56-dev \
     libvte-2.91-dev \
     libwebkit2gtk-4.1-dev \
+    universal-ctags \
     git
 ```
 
@@ -116,6 +117,7 @@ sudo apt install -y \
     libvala-dev \
     libvte-2.91-dev \
     libwebkit2gtk-4.1-dev \
+    universal-ctags \
     git
 ```
 
@@ -137,6 +139,7 @@ sudo dnf install -y \
     libsoup3-devel \
     vte291-devel \
     webkit2gtk4.1-devel \
+    ctags \
     git
 ```
 
@@ -161,6 +164,7 @@ sudo pacman -S --needed \
     libsoup3 \
     vte3 \
     webkit2gtk-4.1 \
+    ctags \
     git
 ```
 

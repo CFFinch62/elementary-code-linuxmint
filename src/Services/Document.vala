@@ -1229,20 +1229,19 @@ namespace Scratch.Services {
 
         public void show_outline (bool show) {
             if (show && outline == null) {
-                switch (mime_type) {
-                    case "text/x-vala":
-                       outline = new ValaSymbolOutline (this);
-                       break;
-                    case "text/x-csrc":
-                    case "text/x-chdr":
-                    case "text/x-c++src":
-                    case "text/x-c++hdr":
-                       outline = new CtagsSymbolOutline (this);
-                       break;
+                // Use specialized Vala parser for Vala files, ctags for everything else
+                if (mime_type == "text/x-vala") {
+                    outline = new ValaSymbolOutline (this);
+                } else if (mime_type != null && mime_type.has_prefix ("text/")) {
+                    // Try ctags for any text-based file
+                    // Ctags supports: C, C++, Python, Java, JavaScript, Ruby, PHP, Perl, 
+                    // Go, Rust, Lua, Shell, and many more languages
+                    outline = new CtagsSymbolOutline (this);
                 }
 
                 if (outline != null) {
                     outline_widget_pane.pack2 (outline.get_widget (), false, false);
+                    outline.get_widget ().show_all ();
                     Idle.add (() => {
                         set_outline_width (doc_view.outline_width);
                         outline_widget_pane.notify["position"].connect (sync_outline_width);
@@ -1270,7 +1269,9 @@ namespace Scratch.Services {
         public void set_outline_width (int width) {
             if (outline != null) {
                var aw = outline_widget_pane.get_allocated_width ();
-               outline_widget_pane.position = (aw - width);
+               // Use a default width of 250 if width is 0 or too small
+               var actual_width = (width > 50) ? width : 250;
+               outline_widget_pane.position = (aw - actual_width);
             }
         }
 
