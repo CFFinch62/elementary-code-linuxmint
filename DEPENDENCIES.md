@@ -46,6 +46,7 @@ These libraries are required for the application to function:
 | **gtkspell3** | - | Spell checking | `libgtkspell3-3-dev` | `gtkspell3-devel` | `gtkspell3` |
 | **vte** | 2.91 | Terminal emulation | `libvte-2.91-dev` | `vte291-devel` | `vte3` |
 | **libsoup** | 3.0 | HTTP library | `libsoup-3.0-dev` | `libsoup3-devel` | `libsoup3` |
+| **webkit2gtk** | 4.1 | Markdown preview | `libwebkit2gtk-4.1-dev` | `webkit2gtk4.1-devel` | `webkit2gtk-4.1` |
 | **fontconfig** | - | Font configuration | `libfontconfig-dev` | `fontconfig-devel` | `fontconfig` |
 | **pangoft2** | - | Font rendering | `libpango1.0-dev` | `pango-devel` | `pango` |
 
@@ -88,6 +89,7 @@ sudo apt install -y \
     libsoup-3.0-dev \
     libvala-0.56-dev \
     libvte-2.91-dev \
+    libwebkit2gtk-4.1-dev \
     git
 ```
 
@@ -113,6 +115,7 @@ sudo apt install -y \
     libsoup-3.0-dev \
     libvala-dev \
     libvte-2.91-dev \
+    libwebkit2gtk-4.1-dev \
     git
 ```
 
@@ -133,6 +136,7 @@ sudo dnf install -y \
     libpeas-devel \
     libsoup3-devel \
     vte291-devel \
+    webkit2gtk4.1-devel \
     git
 ```
 
@@ -156,6 +160,7 @@ sudo pacman -S --needed \
     libpeas \
     libsoup3 \
     vte3 \
+    webkit2gtk-4.1 \
     git
 ```
 

@@ -115,6 +115,7 @@ PACKAGES=(
     "libsoup-3.0-dev"
     "$VALA_PKG"
     "libvte-2.91-dev"
+    "libwebkit2gtk-4.1-dev"
     "itstool"
     "git"
 )

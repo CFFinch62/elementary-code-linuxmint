@@ -92,6 +92,7 @@ Or find "Code" in your application menu.
 - **Syntax Highlighting** - Support for 300+ programming languages
 - **Git Integration** - Built-in Git support
 - **Plugin System** - Extensible with plugins
+- **Markdown Preview** - Live rendered preview for markdown files
 - **Terminal** - Integrated terminal emulator
 - **Multiple Panes** - Split view editing
 - **Auto-save** - Never lose your work
